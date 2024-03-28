@@ -1,13 +1,12 @@
 package com.example.cabproject.service;
 
 import com.example.cabproject.dto.UserResponseDto;
-import com.example.cabproject.entity.User;
+import com.example.cabproject.entity.UserEntity;
 import com.example.cabproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +17,7 @@ public class UserService {
     private final ModelMapper modelMapper;
 
     public List<UserResponseDto> getAllUsers(){
-        List<User> all = userRepository.findAll();
+        List<UserEntity> all = userRepository.findAll();
         return all.stream().map(x -> modelMapper.map(x, UserResponseDto.class)).toList();
     }
 

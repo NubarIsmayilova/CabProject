@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @Data
 @RequiredArgsConstructor
-public class User {
+public class UserEntity {
     @Id
     private Long id;
 

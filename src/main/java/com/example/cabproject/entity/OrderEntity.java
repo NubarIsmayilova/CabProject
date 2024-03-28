@@ -4,11 +4,13 @@ import com.example.cabproject.enums.Options;
 import com.example.cabproject.enums.OrderStatus;
 import com.example.cabproject.enums.PaymentStatus;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
+@Data
 @RequiredArgsConstructor
-public class Order {
+public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
